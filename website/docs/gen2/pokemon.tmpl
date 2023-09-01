@@ -12,13 +12,15 @@ import TabItem from '@theme/TabItem';
 |-|-|-|-|-|
 |{{- .Pokemon.ID -}} |{{- range $type := .Pokemon.Types -}} {{ $type.Type.Name }} {{ end -}} |{{- .Pokemon.Height -}}| {{- .Pokemon.Weight -}}|{{- range $ability := .Pokemon.Abilities -}} {{- if not $ability.IsHidden -}} {{ $ability.Ability.Name }}  {{- end -}} {{ end -}}|
 
-
+{{- if .Evolution.Chain.EvolvesTo -}}
 # Evolutions
 <Tabs>
-  <TabItem value="{{ .Pokemon.Name }}" label="{{ .Pokemon.Name }}" default>
-    <img src="{{- .Pokemon.Sprites.FrontDefault -}}"/>
-    <p>It is timid, and always curls it self up in a ball. If attacked, it flares up its back for protection.</p>
+  {{- range $evolvesTo := .Evolution.Chain.EvolvesTo}}
+  <TabItem value="{{ $.Pokemon.Name }}" label="{{ $.Pokemon.Name }}" default>
+    <img src="{{- $.Pokemon.Sprites.FrontDefault -}}"/>
+    <p>{{- range $entry := $.Species.FlavorTextEntries -}} {{- if eq "en" $entry.Language.Name -}} {{- if eq (index $.Pokemon.GameIndices 0).Version.Name $entry.Version.Name -}} {{$entry.FlavorText}} {{- end -}} {{- end -}} {{- end -}}</p>
   </TabItem>
+  {{- end -}}
   <TabItem value="quilava" label="quilava">
     <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/156.png"/>
     <p>Be careful if it turns its back during battle. It means that it will attack with the fire on its back.</p>
@@ -28,3 +30,4 @@ import TabItem from '@theme/TabItem';
     <p>If its rage peaks, it becomes so hot that anything that touches it will instantly go up in flames.</p>
   </TabItem>
 </Tabs>
+{{- end -}}
