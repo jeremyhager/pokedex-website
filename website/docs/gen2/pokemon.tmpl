@@ -1,0 +1,30 @@
+---
+id: {{ .Pokemon.ID }}
+title: {{ .Pokemon.Name }}
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<img align="right" src="{{- .Pokemon.Sprites.Other.OfficialArtwork.FrontDefault -}}"/>
+
+|Pokédex ID|Type|Height|Weight|Abilities|
+|-|-|-|-|-|
+|{{- .Pokemon.ID -}} |{{- range $type := .Pokemon.Types -}} {{ $type.Type.Name }} {{ end -}} |{{- .Pokemon.Height -}}| {{- .Pokemon.Weight -}}|{{- range $ability := .Pokemon.Abilities -}} {{- if not $ability.IsHidden -}} {{ $ability.Ability.Name }}  {{- end -}} {{ end -}}|
+
+
+# Evolutions
+<Tabs>
+  <TabItem value="{{ .Pokemon.Name }}" label="{{ .Pokemon.Name }}" default>
+    <img src="{{- .Pokemon.Sprites.FrontDefault -}}"/>
+    <p>It is timid, and always curls it self up in a ball. If attacked, it flares up its back for protection.</p>
+  </TabItem>
+  <TabItem value="quilava" label="quilava">
+    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/156.png"/>
+    <p>Be careful if it turns its back during battle. It means that it will attack with the fire on its back.</p>
+  </TabItem>
+  <TabItem value="typhlosion" label="typhlosion">
+    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/157.png"/>
+    <p>If its rage peaks, it becomes so hot that anything that touches it will instantly go up in flames.</p>
+  </TabItem>
+</Tabs>

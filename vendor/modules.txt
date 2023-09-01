@@ -1,0 +1,7 @@
+# github.com/jeremyhager/pokeapi v0.0.0-20230831171116-2c16b20b34f7 => /Users/jeremyhager/go/src/github.com/jeremyhager/pokeapi
+## explicit; go 1.21.0
+github.com/jeremyhager/pokeapi/commonmodels
+github.com/jeremyhager/pokeapi/pokeclient
+github.com/jeremyhager/pokeapi/pokemon
+github.com/jeremyhager/pokeapi/pokemonspecies
+# github.com/jeremyhager/pokeapi => /Users/jeremyhager/go/src/github.com/jeremyhager/pokeapi
