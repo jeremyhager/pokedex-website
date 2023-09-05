@@ -1,5 +1,5 @@
 ---
-id: 155
+slug: /155
 title: cyndaquil
 ---
 import Tabs from '@theme/Tabs';
@@ -12,11 +12,15 @@ import TabItem from '@theme/TabItem';
 |155|fire|5|grassland|79|blaze|
 
 
+some other [pokemon](134)
+
 # Evolutions
-<Tabs>
-  <TabItem value="cyndaquil" label="cyndaquil" default>
+<Tabs defaultValue="cyndaquil">
+  <TabItem value="cyndaquil" label="cyndaquil" >
     <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/155.png"/>
-    <p>It is timid, and always curls it­ self up in a ball. If attacked, it flares up its back for protection.</p>
+
+   [thing](155)
+
   </TabItem>
   <TabItem value="quilava" label="quilava">
     <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/156.png"/>
