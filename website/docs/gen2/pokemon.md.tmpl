@@ -18,14 +18,14 @@ import TabItem from '@theme/TabItem';
 
 
 
-{{ if .EvolutionSpecies -}}
+{{ if .SpeciesLineage -}}
 # Evolutions
 <Tabs defaultValue="{{- $.Pokemon.Name -}}">
-  {{- range $i, $v := .EvolutionSpecies}}
+  {{- range $i, $v := .SpeciesLineage}}
   <TabItem value="{{ .Name }}" label="{{ .Name }}">
-    <img src="{{- (index $.EvolutionPokemon $i ).Sprites.FrontDefault -}}"/>
+    <img src="{{- (index $.PokemonLineage $i ).Sprites.FrontDefault -}}"/>
 
-  See more info [here]({{- (index $.EvolutionSpecies $i ).ID -}})
+  See more info [here]({{- (index $.SpeciesLineage $i ).ID -}})
 
   </TabItem>
   {{- end -}}
