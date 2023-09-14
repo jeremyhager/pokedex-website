@@ -4,7 +4,7 @@ GEN_COUNT=$(pokego named generation --count)
 SPECIES_COUNT=$(pokego named pokemon-species --count)
 declare -A GEN_DOCS
 
-curl https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/155.svg -o website/static/img/logo.svg
+# curl https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/155.svg -o website/static/img/logo.svg
 
 for ((i = 1; i <= $GEN_COUNT; i++)); do
     mkdir -p website/docs/gen$i
