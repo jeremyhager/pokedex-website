@@ -17,7 +17,7 @@ jobs:
           cache: yarn
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn --cwd install --frozen-lockfile
       - name: Build Docs
         run: make build
       - name: Build website
