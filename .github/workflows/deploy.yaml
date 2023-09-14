@@ -6,10 +6,6 @@ on:
       - main
 
 jobs:
-  generate:
-    name: Generate Docs
-    runs-on: ubuntu-latest
-
   deploy:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
