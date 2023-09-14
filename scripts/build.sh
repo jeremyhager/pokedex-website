@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if ! command -v pokego &>/dev/null; then
-    curl -sL https://github.com/jeremyhager/pokego/releases/latest/download/mac.gz | tar xz
+    curl -sL https://github.com/jeremyhager/pokego/releases/latest/download/linux.gz | tar xz
     cp pokego /usr/local/bin
 fi
 
