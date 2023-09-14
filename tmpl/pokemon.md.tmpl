@@ -1,0 +1,34 @@
+---
+sidebar_position: {{ .Pokemon.ID }}
+slug: /{{ .Pokemon.ID }}
+title: {{ .Pokemon.Name }}
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<img align="left" src="/sprites/pokemon/official-artwork/{{- .Pokemon.Name -}}.png"/>
+
+# Description
+
+{{ range $entry := $.Species.FlavorTextEntries -}} {{- if eq "en" $entry.Language.Name -}} {{- if eq (index $.Pokemon.GameIndices 0).Version.Name $entry.Version.Name -}} {{$entry.FlavorText}} {{- end -}} {{- end -}} {{- end }}
+
+|Pokédex ID|Type|Height|Weight|Abilities|
+|-|-|-|-|-|
+|{{- .Pokemon.ID -}} |{{- range $type := .Pokemon.Types -}} {{ $type.Type.Name }} {{ end -}} |{{- .Pokemon.Height -}}| {{- .Pokemon.Weight -}}|{{- range $ability := .Pokemon.Abilities -}} {{- if not $ability.IsHidden -}} {{ $ability.Ability.Name }}  {{- end -}} {{ end -}}|
+
+
+
+{{ if .SpeciesLineage -}}
+# Evolutions
+<Tabs defaultValue="{{- $.Pokemon.Name -}}">
+  {{- range $i, $v := .SpeciesLineage}}
+  <TabItem value="{{ .Name }}" label="{{ .Name }}">
+
+   [![{{ $v.Name }}](/sprites/pokemon/front-default/{{- (index $.PokemonLineage $i ).Name -}}.png)]({{- (index $.SpeciesLineage $i ).ID -}})
+
+  </TabItem>
+  {{- end -}}
+
+</Tabs>
+{{- end -}}

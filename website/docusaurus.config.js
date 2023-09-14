@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Yugawa Pokedex',
   tagline: 'Pokedex POC',
-  favicon: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/155.png',
+  favicon: '/img/sprites/pokemon/other/dream-world/155.svg',
 
   // Set the production url of your site here
   url: 'https://pokedex.yugawa.io',
@@ -39,10 +39,6 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -59,8 +55,8 @@ const config = {
       navbar: {
         title: 'Yugawa Pokedex',
         logo: {
-          alt: 'My Site Logo',
-          src: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/155.png',
+          alt: 'cyndaquil',
+          src: '/img/logo.svg',
         },
         items: [
           {
@@ -70,8 +66,8 @@ const config = {
             label: 'Pokemon',
           },
           {
-            href: 'https://github.com/jeremyhager/',
-            label: 'My GitHub',
+            href: 'https://github.com/jeremyhager/pokedex-website',
+            label: 'GitHub',
             position: 'right',
           },
         ],
@@ -80,28 +76,11 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'pokedex',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'About',
+                to: '/docs/about',
               },
             ],
           },
@@ -109,8 +88,12 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'GitHub',
+                label: 'Docusaurus',
                 href: 'https://github.com/facebook/docusaurus',
+              },
+              {
+                label: 'PokéAPI',
+                href: 'https://pokeapi.co/',
               },
             ],
           },
