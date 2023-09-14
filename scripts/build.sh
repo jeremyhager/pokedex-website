@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if ! command -v pokego &>/dev/null; then
+    curl -sL https://github.com/jeremyhager/pokego/releases/latest/download/mac.gz | tar xz
+    cp pokego /usr/local/bin
+fi
+
 GEN_COUNT=$(pokego named generation --count)
 SPECIES_COUNT=$(pokego named pokemon-species --count)
 declare -A GEN_DOCS
