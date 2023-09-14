@@ -56,7 +56,7 @@ const config = {
         title: 'Yugawa Pokedex',
         logo: {
           alt: 'cyndaquil',
-          src: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/155.svg',
+          src: '/img/logo.svg',
         },
         items: [
           {
@@ -79,8 +79,8 @@ const config = {
             title: 'pokedex',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'About',
+                to: '/docs/about',
               },
             ],
           },
